@@ -1,0 +1,8 @@
+{
+  "name": "cricket-news",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "45ba8e31"
+}
