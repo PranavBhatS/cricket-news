@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar style="background-color: red">
+    <ion-title>Tossing coin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="center-box">
+    <ion-row>
+      <ion-col>
+        <div id="coin-container">
+          <div id="coin" #coin>
+            <div class="side-a" *ngIf="state === 'reset'">
+              Head
+            </div>
+            <div class="side-b" *ngIf="state === 'reset'">
+              Tail
+            </div>
+            <div class="side-c" *ngIf="state === 'start'">
+              Toss
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ng-container *ngIf="state === 'start'">
+        <ion-col size="6">
+          <ion-button color="warning" (click)="tossHelper('head')"> Head</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="primary" (click)="tossHelper('tail')"> Tail</ion-button>
+        </ion-col>
+      </ng-container>
+      <ng-container *ngIf="state === 'reset'">
+        <ion-col size="6" offset="3">
+          <ion-button color="danger" (click)="start()"> Again</ion-button>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+ 
+</ion-content>
